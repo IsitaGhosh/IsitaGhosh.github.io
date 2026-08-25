@@ -401,37 +401,24 @@ body.nav-open{overflow:hidden;}
 .btn.primary:hover{color:var(--ground);opacity:.9;}
 .btn svg{width:15px;height:15px;}
 
-/* certifications and award in the hero, on aligned rows */
-.hero-creds{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin-top:36px;
-}
-.hcrow{
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
-.hcrow-label{
-  width:172px;
-  flex:none;
-  font-size:10px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--ink-3);
-}
-.hcrow-items{
+/* credentials strip under the name: award, then the certification badges */
+.credstrip{
   display:flex;
   align-items:center;
   flex-wrap:wrap;
   gap:12px;
-  min-height:44px;
+  margin:0 0 24px;
+}
+.creds-div{
+  width:1px;
+  height:26px;
+  flex:none;
+  background:var(--rule);
 }
 .hero-badge{
   display:block;
-  width:44px;
-  height:44px;
+  width:42px;
+  height:42px;
   transition:transform .2s ease;
 }
 .hero-badge img{width:100%;height:100%;object-fit:contain;display:block;}
@@ -440,7 +427,6 @@ body.nav-open{overflow:hidden;}
   display:inline-flex;
   align-items:center;
   gap:9px;
-  margin-bottom:22px;
   padding:8px 16px 8px 12px;
   border:1px solid var(--rule);
   border-radius:999px;
@@ -460,13 +446,10 @@ body.nav-open{overflow:hidden;}
   font-weight:400;
   color:var(--ink-3);
 }
-@media (max-width:480px){
-  .award-chip-sub{display:none;}
-}
 @media (max-width:560px){
-  .hcrow{flex-wrap:wrap;gap:8px;}
-  .hcrow-label{width:100%;}
-  .hcrow-items{min-height:0;}
+  .award-chip-sub{display:none;}
+  .creds-div{display:none;}
+  .credstrip{gap:10px;}
 }
 
 /* ============ stat strip ============ */
@@ -1124,11 +1107,23 @@ footer{
     <div class="wrap">
       <p class="eyebrow mono"><span class="avail" aria-hidden="true"></span>Kolkata, India &nbsp;/&nbsp; Available for senior integration roles &mdash; full-time, contract or remote</p>
       <h1 class="name">Isita <em>Ghosh</em></h1>
-      <span class="award-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v5a6 6 0 0 1-12 0z"/><path d="M6 5H4a2 2 0 0 0 2 3M18 5h2a2 2 0 0 1-2 3"/><path d="M12 14v3M9 21h6M10 17h4l1 4H9z"/></svg>
-        Emerging Award
-        <span class="award-chip-sub mono">Employer recognition</span>
-      </span>
+      <div class="credstrip">
+        <span class="award-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v5a6 6 0 0 1-12 0z"/><path d="M6 5H4a2 2 0 0 0 2 3M18 5h2a2 2 0 0 1-2 3"/><path d="M12 14v3M9 21h6M10 17h4l1 4H9z"/></svg>
+          Emerging Award
+          <span class="award-chip-sub mono">Employer recognition</span>
+        </span>
+        <span class="creds-div" aria-hidden="true"></span>
+        <a class="hero-badge" href="#certificates" title="Salesforce Certified MuleSoft Developer II">
+          <img src="badges/mulesoft-developer-2.png?v=2" width="160" height="160" alt="Salesforce Certified MuleSoft Developer II">
+        </a>
+        <a class="hero-badge" href="#certificates" title="Salesforce Certified AI Associate">
+          <img src="badges/salesforce-ai-associate.png?v=3" width="160" height="160" alt="Salesforce Certified AI Associate">
+        </a>
+        <a class="hero-badge" href="#certificates" title="Salesforce Certified MuleSoft Developer Level 1">
+          <img src="badges/mulesoft-developer-1.png?v=2" width="160" height="160" alt="Salesforce Certified MuleSoft Developer Level 1">
+        </a>
+      </div>
       <p class="role">Senior MuleSoft Integration Engineer<span class="sep">&middot;</span><span class="mono" style="font-size:.8em;letter-spacing:.04em;">MCD1 &nbsp;MCD2</span></p>
       <p class="lede">I build the connective tissue of enterprise systems — API-led architectures on the Anypoint Platform that move EDI, ERP and CRM data between companies without dropping a message. Nearly five years of it: migrating legacy TIBCO and IBM IIB estates to MuleSoft, onboarding trading partners, and keeping production quiet after go-live.</p>
       <div class="actions">
@@ -1145,21 +1140,6 @@ footer{
           LinkedIn
         </a>
       </div>
-      <div class="hero-creds">
-        <div class="hcrow">
-          <span class="hcrow-label mono">Salesforce Certified</span>
-          <div class="hcrow-items">
-            <a class="hero-badge" href="#certificates" title="Salesforce Certified MuleSoft Developer II">
-            <img src="badges/mulesoft-developer-2.png?v=2" width="160" height="160" alt="Salesforce Certified MuleSoft Developer II">
-        </a>
-            <a class="hero-badge" href="#certificates" title="Salesforce Certified AI Associate">
-            <img src="badges/salesforce-ai-associate.png?v=3" width="160" height="160" alt="Salesforce Certified AI Associate">
-        </a>
-            <a class="hero-badge" href="#certificates" title="Salesforce Certified MuleSoft Developer Level 1">
-            <img src="badges/mulesoft-developer-1.png?v=2" width="160" height="160" alt="Salesforce Certified MuleSoft Developer Level 1">
-        </a>
-          </div>
-        </div>
       </div>
   </section>
 
