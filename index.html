@@ -929,35 +929,89 @@ body.nav-open{overflow:hidden;}
 .cert-note:hover{color:var(--accent);}
 .cert-note:hover svg{transform:translate(2px,-2px);}
 
-.edu{
-  padding:18px 0;
-  border-bottom:1px solid var(--rule);
+.edu, .langs{
+  display:flex;
+  gap:15px;
+  padding:18px 18px 16px;
+  border:1px solid var(--rule);
+  border-radius:12px;
+  background:var(--surface);
+  transition:border-color .2s ease, box-shadow .2s ease;
 }
-.edu:last-child{border-bottom:none;}
+.edu:hover{border-color:var(--accent);box-shadow:var(--shadow);}
+.edu-ico{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  flex:none;
+  border-radius:10px;
+  background:var(--accent-wash);
+  color:var(--accent);
+}
+.edu-ico svg{width:18px;height:18px;}
+.edu-body{flex:1;min-width:0;}
 .edu-top{
   display:flex;
   justify-content:space-between;
   align-items:baseline;
-  gap:16px;
-  margin-bottom:5px;
+  gap:14px;
+  flex-wrap:wrap;
 }
-.edu-deg{font-size:.99rem;font-weight:600;}
-.edu-yr{font-size:11.5px;color:var(--ink-3);white-space:nowrap;}
+.edu-deg{font-size:.99rem;font-weight:600;margin:0;letter-spacing:-.01em;}
+.edu-yr{font-size:11px;color:var(--ink-3);white-space:nowrap;}
 .edu-school{
   font-family:"Source Serif 4", Georgia, serif;
   font-style:italic;
   color:var(--ink-2);
-  font-size:.95rem;
+  font-size:.93rem;
+  margin:3px 0 0;
 }
-.gpa{
-  display:inline-block;
-  margin-top:9px;
-  font-size:11.5px;
-  padding:3px 9px;
-  border-radius:6px;
-  background:var(--accent-wash);
+.edu-gpa{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:13px;
+}
+.gpa-num{
+  font-family:"Source Serif 4", Georgia, serif;
+  font-size:1.2rem;
+  line-height:1;
   color:var(--accent-ink);
+  flex:none;
 }
+.gpa-max{font-size:.6em;color:var(--ink-3);}
+.gpa-bar{
+  flex:1;
+  min-width:60px;
+  height:4px;
+  border-radius:999px;
+  background:var(--surface-2);
+  overflow:hidden;
+}
+.gpa-fill{
+  display:block;
+  height:100%;
+  border-radius:999px;
+  background:var(--accent);
+}
+.gpa-lbl{
+  font-size:9.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  flex:none;
+}
+.langs-label{
+  display:block;
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  margin-bottom:9px;
+}
+.langs .chips{gap:6px;}
 
 /* ============ contact ============ */
 .contact{
@@ -1476,28 +1530,46 @@ footer{
         <div class="reveal">
           <h3 style="font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin:0 0 18px;">Education</h3>
           <div class="edu-list">
-            <div class="edu">
-              <div class="edu-top">
-                <span class="edu-deg">Master of Computer Applications</span>
-                <span class="edu-yr mono">2020 — 2022</span>
+            <article class="edu">
+              <span class="edu-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 5-10 5L2 8z"/><path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/><path d="M22 8v6"/></svg></span>
+              <div class="edu-body">
+                <div class="edu-top">
+                  <h4 class="edu-deg">Master of Computer Applications</h4>
+                  <span class="edu-yr mono">2020 &mdash; 2022</span>
+                </div>
+                <p class="edu-school">RCC Institute of Information Technology</p>
+                <div class="edu-gpa">
+                  <span class="gpa-num mono">9.81<span class="gpa-max">/10</span></span>
+                  <span class="gpa-bar"><span class="gpa-fill" style="width:98.1%"></span></span>
+                  <span class="gpa-lbl mono">CGPA</span>
+                </div>
               </div>
-              <div class="edu-school">RCC Institute of Information Technology</div>
-              <span class="gpa mono">CGPA 9.81 / 10</span>
-            </div>
-            <div class="edu">
-              <div class="edu-top">
-                <span class="edu-deg">Bachelor of Computer Applications</span>
-                <span class="edu-yr mono">2017 — 2020</span>
+            </article>
+            <article class="edu">
+              <span class="edu-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 5-10 5L2 8z"/><path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/><path d="M22 8v6"/></svg></span>
+              <div class="edu-body">
+                <div class="edu-top">
+                  <h4 class="edu-deg">Bachelor of Computer Applications</h4>
+                  <span class="edu-yr mono">2017 &mdash; 2020</span>
+                </div>
+                <p class="edu-school">Kharagpur College</p>
+                <div class="edu-gpa">
+                  <span class="gpa-num mono">7.1<span class="gpa-max">/10</span></span>
+                  <span class="gpa-bar"><span class="gpa-fill" style="width:71.0%"></span></span>
+                  <span class="gpa-lbl mono">CGPA</span>
+                </div>
               </div>
-              <div class="edu-school">Kharagpur College</div>
-              <span class="gpa mono">CGPA 7.1 / 10</span>
-            </div>
-            <div class="edu">
-              <div class="edu-top">
-                <span class="edu-deg">Languages</span>
+            </article>
+            <div class="langs">
+              <span class="edu-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></span>
+              <div class="edu-body">
+                <span class="langs-label mono">Languages</span>
+                <div class="chips">
+                  <span class="chip">English</span><span class="chip">Hindi</span><span class="chip">Bengali</span>
+                </div>
               </div>
-              <div class="edu-school">English · Hindi · Bengali</div>
             </div>
+          </div>
           </div>
         </div>
       </div>
