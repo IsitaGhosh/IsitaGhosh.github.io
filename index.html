@@ -485,7 +485,7 @@ a{color:inherit;}
 /* ============ skills ============ */
 .skillgrid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(420px,1fr));
+  grid-template-columns:repeat(auto-fit, minmax(min(420px,100%),1fr));
   gap:1px;
   background:var(--rule);
   border:1px solid var(--rule);
@@ -543,7 +543,7 @@ a{color:inherit;}
 /* ============ certs + education ============ */
 .two-col{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+  grid-template-columns:repeat(auto-fit, minmax(min(300px,100%),1fr));
   gap:56px;
 }
 .cert-list, .edu-list{
@@ -718,12 +718,30 @@ a{color:inherit;}
   transition:padding-left .22s ease, color .22s ease;
 }
 .crow:hover{padding-left:14px;color:var(--accent);}
+.crow .cicon{
+  width:36px;
+  height:36px;
+  flex:none;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  border:1px solid var(--rule);
+  background:var(--surface);
+  color:var(--ink-2);
+  transition:border-color .22s ease, background .22s ease, color .22s ease;
+}
+.crow .cicon svg{width:16px;height:16px;}
+.crow:hover .cicon{
+  border-color:var(--accent);
+  background:var(--accent-wash);
+  color:var(--accent);
+}
 .crow .k{
   font-size:11px;
   letter-spacing:.12em;
   text-transform:uppercase;
   color:var(--ink-3);
-  width:88px;
+  width:76px;
   flex:none;
 }
 .crow .v{flex:1;min-width:0;font-size:.96rem;overflow-wrap:anywhere;}
@@ -734,6 +752,11 @@ a{color:inherit;}
   transition:transform .22s ease, color .22s ease;
 }
 .crow:hover .arrow{transform:translate(3px,-3px);color:var(--accent);}
+@media (max-width:560px){
+  /* the icon already says which channel it is */
+  .crow .k{display:none;}
+  .crow{gap:14px;}
+}
 
 footer{
   padding-block:34px 56px;
@@ -1099,21 +1122,25 @@ footer{
         <p>Open to senior integration engineering and MuleSoft architecture roles. The fastest way to reach me is email — I answer within a day.</p>
         <div class="contact-rows">
           <a class="crow" href="mailto:isitaghosh26@gmail.com">
+            <span class="cicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
             <span class="k mono">Email</span>
             <span class="v">isitaghosh26@gmail.com</span>
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
           </a>
           <a class="crow" href="tel:+916296787882">
+            <span class="cicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
             <span class="k mono">Phone</span>
             <span class="v mono">+91 62967 87882</span>
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
           </a>
           <a class="crow" href="https://www.linkedin.com/in/isitaghosh" target="_blank" rel="noopener">
+            <span class="cicon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21H9z"/></svg></span>
             <span class="k mono">LinkedIn</span>
             <span class="v">linkedin.com/in/isitaghosh</span>
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
           </a>
           <div class="crow" style="cursor:default;">
+            <span class="cicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
             <span class="k mono">Based in</span>
             <span class="v">Kolkata, India · IST (UTC+5:30)</span>
           </div>
