@@ -60,4 +60,39 @@ Open `index.html` in any text editor. The content is plain HTML near the bottom 
 
 To add a new job, copy an entire `<article class="entry">…</article>` block and edit the text. To add a project inside a job, copy a `<details class="proj">…</details>` block.
 
+### Swapping in the official certification badges
+
+The credential cards currently use custom hexagon marks (`MCD 1`, `MCD 2`, `SF AI`)
+drawn in the site's own palette. If you'd rather show the real Salesforce-issued
+badge artwork:
+
+1. Download the PNGs from your Trailhead profile → **Credentials**, or from Credly
+   if your certs are issued there. Save them at around 240×240.
+2. Make a `badges/` folder next to `index.html` and drop them in, e.g.
+   `badges/mcd1.png`.
+3. In the `CREDENTIALS` section, replace the badge block:
+
+```html
+<!-- from -->
+<span class="badgemark"><span class="face">…</span></span>
+<!-- to -->
+<span class="badgemark art"><img src="badges/mcd1.png" alt=""></span>
+```
+
+The `.art` variant drops the hexagon frame and just shows the image, so the
+official badge shape comes through unaltered. Leave `alt=""` — the credential
+name is already right beside it, so a screen reader would otherwise read it twice.
+
+Use the official artwork only for certifications you actually hold; the badge is
+issued to you and its licence covers exactly that.
+
+### Verify links
+
+Each certification card links to Salesforce's public credential-verification page.
+Replace those `href`s with your personal Trailhead profile URL once you have it —
+a recruiter clicking through to your name is far more convincing than a generic
+lookup form.
+
+---
+
 Colours live at the very top of the `<style>` block as CSS variables (`--accent`, `--ground`, `--ink`), with the dark-mode values just below. Changing `--accent` in both places re-themes the whole site.
