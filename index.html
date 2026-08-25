@@ -329,6 +329,14 @@ a{color:inherit;}
   padding:26px 22px 24px;
   background:var(--ground);
 }
+.stat-ico{
+  display:block;
+  color:var(--ink-3);
+  margin-bottom:14px;
+  transition:color .25s ease, transform .25s ease;
+}
+.stat-ico svg{width:18px;height:18px;}
+.stat:hover .stat-ico{color:var(--accent);transform:translateY(-2px);}
 .stat .num{
   font-family:"Source Serif 4", Georgia, serif;
   font-size:clamp(1.9rem, 4vw, 2.5rem);
@@ -367,6 +375,19 @@ a{color:inherit;}
   margin:0;
   white-space:nowrap;
 }
+.sec-ico{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+  flex:none;
+  border-radius:9px;
+  background:var(--accent-wash);
+  color:var(--accent);
+  align-self:center;
+}
+.sec-ico svg{width:16px;height:16px;}
 .section-head .idx{
   font-size:11px;
   color:var(--accent);
@@ -401,12 +422,11 @@ a{color:inherit;}
   align-items:center;
   gap:9px;
 }
-.skillcard h3::before{
-  content:"";
-  width:6px;height:6px;
-  border-radius:50%;
-  background:var(--accent);
+.skillcard h3 svg{
+  width:15px;
+  height:15px;
   flex:none;
+  color:var(--accent);
 }
 .chips{
   display:flex;
@@ -847,6 +867,7 @@ a{color:inherit;}
   .crow{gap:14px;}
 }
 
+.foot-note{color:var(--ink-3);}
 footer{
   padding-block:34px 56px;
   display:flex;
@@ -940,22 +961,27 @@ footer{
   <div class="wrap">
     <div class="stats reveal">
       <div class="stat">
+        <span class="stat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
         <span class="num mono">5<span style="font-size:.6em">yrs</span></span>
         <span class="lbl">Integration<br>engineering</span>
       </div>
       <div class="stat">
+        <span class="stat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l2.5-7 4 14 2.5-7h7"/></svg></span>
         <span class="num mono">1,000<span style="font-size:.45em">/min</span></span>
         <span class="lbl">Messages sustained<br>at go-live</span>
       </div>
       <div class="stat">
+        <span class="stat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6M17.5 14.4A6.5 6.5 0 0 1 21.5 20"/></svg></span>
         <span class="num mono">20+</span>
         <span class="lbl">Trading partners<br>onboarded</span>
       </div>
       <div class="stat">
+        <span class="stat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>
         <span class="num mono">2,000+</span>
         <span class="lbl">Lines of<br>DataWeave 2.0</span>
       </div>
       <div class="stat">
+        <span class="stat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.1 8.7 7.5 10 4.4-1.3 7.5-5.4 7.5-10v-6z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg></span>
         <span class="num mono">80%+</span>
         <span class="lbl">MUnit test<br>coverage</span>
       </div>
@@ -968,6 +994,7 @@ footer{
     <div class="wrap">
       <div class="section-head reveal">
         <span class="idx mono">01</span>
+        <span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="7" width="19" height="13" rx="2.2"/><path d="M8.5 7V5.2A1.7 1.7 0 0 1 10.2 3.5h3.6a1.7 1.7 0 0 1 1.7 1.7V7"/><path d="M2.5 12.5h19"/></svg></span>
         <h2>Selected Work</h2>
         <span class="line"></span>
       </div>
@@ -1089,6 +1116,7 @@ footer{
     <div class="wrap">
       <div class="section-head reveal">
         <span class="idx mono">02</span>
+        <span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 5.5H3v11h4.5L11 21v-4.5h10z"/></svg></span>
         <h2>Recommendations</h2>
         <span class="line"></span>
       </div>
@@ -1120,31 +1148,32 @@ footer{
     <div class="wrap">
       <div class="section-head reveal">
         <span class="idx mono">03</span>
+        <span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg></span>
         <h2>Technical Skills</h2>
         <span class="line"></span>
       </div>
 
       <div class="skillgrid reveal">
         <div class="skillcard">
-          <h3>Platform &amp; Languages</h3>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 9 5-9 5-9-5z"/><path d="m3 12.5 9 5 9-5M3 16.8l9 5 9-5"/></svg>Platform &amp; Languages</h3>
           <div class="chips">
             <span class="chip key">Anypoint Platform</span><span class="chip">Anypoint Studio</span><span class="chip">Runtime Manager</span><span class="chip">API Manager</span><span class="chip">Exchange</span><span class="chip">Partner Manager</span><span class="chip key">Mule 4</span><span class="chip key">DataWeave 2.0</span><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Agile / SDLC</span><span class="chip">RAML / OAS</span><span class="chip">XML</span><span class="chip">JSON</span>
           </div>
         </div>
         <div class="skillcard">
-          <h3>Integration &amp; Web Services</h3>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="18" cy="18" r="2.6"/><path d="m8.3 10.8 7.4-3.6M8.3 13.2l7.4 3.6"/></svg>Integration &amp; Web Services</h3>
           <div class="chips">
             <span class="chip key">API-led connectivity</span><span class="chip">Event-driven</span><span class="chip">Batch</span><span class="chip">Streaming</span><span class="chip">REST</span><span class="chip">SOAP</span><span class="chip">HTTP</span><span class="chip">Salesforce</span><span class="chip">SAP</span><span class="chip">Database</span><span class="chip">FTP / SFTP</span><span class="chip">MQ</span><span class="chip">CTG</span><span class="chip">WSC</span><span class="chip">Snowflake</span><span class="chip">Dynamics 365</span><span class="chip">Workday</span><span class="chip">SAP IDoc</span><span class="chip">SAP BW</span>
           </div>
         </div>
         <div class="skillcard">
-          <h3>EDI / B2B &amp; Security</h3>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.1 8.7 7.5 10 4.4-1.3 7.5-5.4 7.5-10v-6z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg>EDI / B2B &amp; Security</h3>
           <div class="chips">
             <span class="chip key">X12</span><span class="chip">850</span><span class="chip">810</span><span class="chip">856</span><span class="chip">852</span><span class="chip">997</span><span class="chip key">EDIFACT</span><span class="chip">AS2</span><span class="chip">Anypoint Partner Manager</span><span class="chip key">OAuth 2.0</span><span class="chip">JWT</span><span class="chip">mTLS / SSL</span><span class="chip">Client credentials</span><span class="chip">SLA tiers</span>
           </div>
         </div>
         <div class="skillcard">
-          <h3>Cloud, CI/CD &amp; Testing</h3>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 18.5H7a4.5 4.5 0 0 1-.6-8.96 6 6 0 0 1 11.5 1.7 3.6 3.6 0 0 1-.4 7.26z"/></svg>Cloud, CI/CD &amp; Testing</h3>
           <div class="chips">
             <span class="chip key">CloudHub</span><span class="chip">AWS</span><span class="chip key">Azure DevOps</span><span class="chip">Jenkins</span><span class="chip">Maven</span><span class="chip">Git</span><span class="chip">Azure TFS</span><span class="chip key">MUnit</span><span class="chip">Postman</span><span class="chip">Splunk</span><span class="chip">Structured logging</span><span class="chip">ELK / Elasticsearch</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">MS SQL Server</span>
           </div>
@@ -1159,6 +1188,7 @@ footer{
     <div class="wrap">
       <div class="section-head reveal">
         <span class="idx mono">04</span>
+        <span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="m8.5 13-1.5 8 5-2.5 5 2.5-1.5-8"/></svg></span>
         <h2>Credentials</h2>
         <span class="line"></span>
       </div>
@@ -1289,7 +1319,7 @@ footer{
       </div>
       <footer>
         <span class="mono">© 2026 Isita Ghosh</span>
-        <span class="mono">Senior MuleSoft Integration Engineer</span>
+        <span class="mono foot-note">One HTML file · no framework · no build step · 0 dropped messages</span>
       </footer>
     </div>
   </section>
@@ -1369,6 +1399,20 @@ footer{
   });
 
   onScroll();
+
+  /* for whoever opens the console */
+  try{
+    console.log(
+      "%cHi. \ud83d\udc4b",
+      "font:600 20px ui-sans-serif,system-ui,sans-serif;color:#0A5348"
+    );
+    console.log(
+      "%cYou opened devtools on a portfolio. That is exactly the kind of curiosity I like in a teammate.\n" +
+      "This whole site is one hand-written HTML file. No framework, no bundler, no node_modules.\n" +
+      "If you are hiring MuleSoft people: isitaghosh26@gmail.com",
+      "font:13px ui-monospace,SFMono-Regular,Menlo,monospace;line-height:1.7"
+    );
+  }catch(e){}
 })();
 </script>
   </body>
