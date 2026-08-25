@@ -572,6 +572,59 @@ a{color:inherit;}
   font-weight:500;
 }
 
+/* ============ recommendations ============ */
+.quotes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(min(340px,100%),1fr));
+  gap:22px;
+}
+.quote{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  padding:28px 26px 24px;
+  border:1px solid var(--rule);
+  border-radius:14px;
+  background:var(--surface);
+  position:relative;
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+.quote:hover{border-color:var(--rule-strong);box-shadow:var(--shadow);}
+.quote::before{
+  content:"\201C";
+  position:absolute;
+  top:6px;
+  left:20px;
+  font-family:"Source Serif 4", Georgia, serif;
+  font-size:58px;
+  line-height:1;
+  color:var(--accent);
+  opacity:.22;
+}
+.quote blockquote{
+  margin:0 0 20px;
+  font-family:"Source Serif 4", Georgia, serif;
+  font-size:1rem;
+  line-height:1.66;
+  color:var(--ink-2);
+  position:relative;
+}
+.quote figcaption{
+  margin-top:auto;
+  border-top:1px solid var(--rule);
+  padding-top:15px;
+}
+.q-name{display:block;font-size:.93rem;font-weight:600;color:var(--ink);}
+.q-role{display:block;font-size:.86rem;color:var(--ink-2);margin-top:2px;}
+.q-meta{
+  display:block;
+  font-size:10.5px;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  margin-top:7px;
+}
+
 /* ============ certs + education ============ */
 .two-col{
   display:grid;
@@ -830,6 +883,7 @@ footer{
     <nav class="navlinks">
       <a href="#credentials">Credentials</a>
       <a href="#experience">Experience</a>
+      <a href="#recommendations">Recommendations</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -1022,7 +1076,7 @@ footer{
           <span class="node"></span>
           <p class="entry-date mono">Jul 2024 &mdash; Present</p>
           <h3>Senior Software Engineer</h3>
-          <p class="org">Prowess Software Services Pvt. Ltd. &middot; Hyderabad</p>
+          <p class="org">Prowess Software Services Pvt. Ltd. &middot; Remote</p>
           <p class="roles mono">Promoted from Software Engineer, Apr 2026</p>
           <div class="projects">
 
@@ -1162,11 +1216,43 @@ footer{
     </div>
   </section>
 
+
+  <!-- ============ RECOMMENDATIONS ============ -->
+  <section class="section" id="recommendations">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="idx mono">03</span>
+        <h2>Recommendations</h2>
+        <span class="line"></span>
+      </div>
+
+      <div class="quotes">
+        <figure class="quote reveal">
+          <blockquote>I had the pleasure of working closely with Isita, and I can confidently say she is an exceptional professional with strong technical and interpersonal skills. Isita is an excellent MuleSoft professional with strong expertise in DataWeave and integration development. She handled TMS application tasks and production troubleshooting with great ownership and accuracy. Extremely cooperative, humble, and always willing to help the team. A truly reliable and skilled engineer to work with.</blockquote>
+          <figcaption>
+            <span class="q-name">Preeti Kaushal</span>
+            <span class="q-role">Project Manager, Tata Consultancy Services</span>
+            <span class="q-meta mono">LinkedIn recommendation &middot; Feb 2026</span>
+          </figcaption>
+        </figure>
+
+        <figure class="quote reveal">
+          <blockquote>I worked closely with Isita on the General Beverages project and was impressed by her willingness to learn and take ownership. She responds well to feedback and delivers consistently. A reliable team player with strong growth potential.</blockquote>
+          <figcaption>
+            <span class="q-name">Sravan Kumar Reddy Karra</span>
+            <span class="q-role">MuleSoft Certified Developer, Senior Software Engineer</span>
+            <span class="q-meta mono">LinkedIn recommendation &middot; Feb 2026</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ SKILLS ============ -->
   <section class="section" id="skills">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="idx mono">03</span>
+        <span class="idx mono">04</span>
         <h2>Technical Skills</h2>
         <span class="line"></span>
       </div>
