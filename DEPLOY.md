@@ -132,6 +132,36 @@ Reverse-IP tools that claim to name the *company* a visitor came from do exist,
 but they are paid, they guess, and they are close to useless for anyone on home
 broadband or mobile data. Not worth it for a personal portfolio.
 
+### Knowing who looked: tagged links
+
+You cannot learn a stranger's name from a website visit — see the note above.
+But for anyone you send the link to *yourself*, you can tag the link and know
+exactly whose visit it was.
+
+GoatCounter reads a `ref` (or `campaign`) query parameter automatically and
+groups visits under it in the **Campaigns** widget on your dashboard. No setup
+needed — a new tag appears the first time it is used.
+
+Send a different link to each person or application:
+
+```
+https://isitaghosh.github.io/?ref=rahul
+https://isitaghosh.github.io/?ref=tcs-application
+https://isitaghosh.github.io/?ref=linkedin-post-aug
+https://isitaghosh.github.io/?ref=infosys-recruiter
+```
+
+The page looks identical to them — the parameter is invisible in the layout.
+On your dashboard you then see which tag the visit came from, so you know
+*which application* or *which person* produced it.
+
+This is the practical answer to "who viewed my profile" for a public site:
+you cannot identify people who find you on their own, but you can absolutely
+tell apart the people you reached out to.
+
+Recognised parameters: `ref`, `src`, `source`, `utm_source` for the source, and
+`campaign` or `utm_campaign` for the campaign name.
+
 ### Turning it off
 
 Delete the `<script data-goatcounter=...>` tag at the bottom of `index.html`.
