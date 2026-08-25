@@ -353,167 +353,6 @@ a{color:inherit;}
   background:var(--rule);
 }
 
-/* ============ timeline ============ */
-.timeline{
-  position:relative;
-  padding-left:0;
-}
-.spine{
-  position:absolute;
-  left:7px;
-  top:6px;
-  bottom:6px;
-  width:1px;
-  background:var(--rule);
-}
-.spine-fill{
-  position:absolute;
-  left:0;
-  top:0;
-  width:1px;
-  height:0;
-  background:var(--accent);
-  transition:height .1s linear;
-}
-.entry{
-  position:relative;
-  padding-left:44px;
-  padding-bottom:56px;
-}
-.entry:last-child{padding-bottom:0;}
-.node{
-  position:absolute;
-  left:0;
-  top:5px;
-  width:15px;
-  height:15px;
-  border-radius:50%;
-  border:1px solid var(--rule-strong);
-  background:var(--ground);
-  display:grid;
-  place-items:center;
-}
-.node::after{
-  content:"";
-  width:5px;height:5px;
-  border-radius:50%;
-  background:var(--rule-strong);
-  transition:background .3s ease, box-shadow .3s ease;
-}
-.entry.lit .node{border-color:var(--accent);}
-.entry.lit .node::after{
-  background:var(--accent);
-  box-shadow:0 0 0 4px var(--accent-wash);
-}
-.entry-date{
-  font-size:11.5px;
-  letter-spacing:.07em;
-  color:var(--accent);
-  text-transform:uppercase;
-  margin-bottom:7px;
-}
-.entry h3{
-  font-size:clamp(1.15rem, 2.5vw, 1.4rem);
-  font-weight:600;
-  letter-spacing:-.015em;
-  margin:0 0 4px;
-}
-.entry .roles{
-  font-size:11.5px;
-  letter-spacing:.04em;
-  color:var(--ink-3);
-  margin:-16px 0 22px;
-}
-.entry .org{
-  font-family:"Source Serif 4", Georgia, serif;
-  font-style:italic;
-  font-size:1.02rem;
-  color:var(--ink-2);
-  margin:0 0 22px;
-}
-.projects{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-/* ============ project disclosure ============ */
-.proj{
-  border:1px solid var(--rule);
-  border-radius:12px;
-  background:var(--surface);
-  overflow:hidden;
-  transition:border-color .2s ease, box-shadow .2s ease;
-}
-.proj:hover{border-color:var(--rule-strong);}
-.proj[open]{border-color:var(--accent);box-shadow:var(--shadow);}
-.proj > summary{
-  list-style:none;
-  cursor:pointer;
-  padding:16px 18px;
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-.proj > summary::-webkit-details-marker{display:none;}
-.proj-title{
-  font-weight:600;
-  font-size:.97rem;
-  letter-spacing:-.005em;
-  flex:1;
-  min-width:0;
-}
-.proj-tag{
-  font-size:10px;
-  letter-spacing:.09em;
-  text-transform:uppercase;
-  padding:4px 9px;
-  border-radius:999px;
-  background:var(--accent-wash);
-  color:var(--accent-ink);
-  white-space:nowrap;
-}
-.chev{
-  width:14px;height:14px;
-  flex:none;
-  color:var(--ink-3);
-  transition:transform .25s ease;
-}
-.proj[open] .chev{transform:rotate(180deg);color:var(--accent);}
-.proj-body{
-  padding:2px 18px 20px 18px;
-  border-top:1px solid var(--rule);
-  margin-top:-1px;
-}
-.proj-body ul{
-  margin:18px 0 0;
-  padding:0;
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:13px;
-}
-.proj-body li{
-  position:relative;
-  padding-left:20px;
-  font-size:.94rem;
-  line-height:1.62;
-  color:var(--ink-2);
-}
-.proj-body li::before{
-  content:"";
-  position:absolute;
-  left:2px;
-  top:.66em;
-  width:7px;
-  height:1px;
-  background:var(--accent);
-}
-.proj-body b{color:var(--ink);font-weight:600;}
-@media (max-width:560px){
-  .proj-tag{display:none;}
-}
-
 /* ============ skills ============ */
 .skillgrid{
   display:grid;
@@ -570,6 +409,135 @@ a{color:inherit;}
   border-color:var(--rule-strong);
   color:var(--ink);
   font-weight:500;
+}
+
+/* ============ work ============ */
+.rail{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(min(220px,100%),1fr));
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:40px;
+}
+.rail-item{
+  background:var(--surface);
+  padding:18px 20px 20px;
+}
+.rail-when{
+  font-size:10.5px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  color:var(--accent);
+  display:block;
+  margin-bottom:8px;
+}
+.rail-role{display:block;font-size:.97rem;font-weight:600;letter-spacing:-.01em;}
+.rail-co{
+  display:block;
+  font-family:"Source Serif 4", Georgia, serif;
+  font-style:italic;
+  font-size:.9rem;
+  color:var(--ink-2);
+  margin-top:3px;
+}
+.rail-note{display:block;font-size:10.5px;color:var(--ink-3);margin-top:7px;letter-spacing:.03em;}
+
+.work{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(min(430px,100%),1fr));
+  gap:20px;
+}
+.wcard{
+  display:flex;
+  flex-direction:column;
+  border:1px solid var(--rule);
+  border-radius:14px;
+  background:var(--surface);
+  padding:26px 26px 22px;
+  transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.wcard:hover{border-color:var(--accent);box-shadow:var(--shadow);transform:translateY(-2px);}
+.wcard-meta{
+  font-size:10.5px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  margin-bottom:12px;
+}
+.wcard-client{
+  font-family:"Source Serif 4", Georgia, serif;
+  font-size:1.45rem;
+  line-height:1.15;
+  letter-spacing:-.02em;
+  margin:0 0 5px;
+}
+.wcard-desc{font-size:.9rem;color:var(--ink-2);margin:0 0 18px;}
+.wm{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  padding:14px 0 16px;
+  border-block:1px solid var(--rule);
+  margin-bottom:18px;
+}
+.wm-num{
+  font-family:"Source Serif 4", Georgia, serif;
+  font-size:1.9rem;
+  line-height:1;
+  letter-spacing:-.02em;
+  color:var(--accent);
+}
+.wm-unit{font-size:.5em;}
+.wm-lbl{
+  font-size:10.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  line-height:1.4;
+}
+.wcard ul{
+  margin:0 0 20px;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+}
+.wcard li{
+  position:relative;
+  padding-left:19px;
+  font-size:.92rem;
+  line-height:1.6;
+  color:var(--ink-2);
+}
+.wcard li::before{
+  content:"";
+  position:absolute;
+  left:1px;
+  top:.66em;
+  width:7px;
+  height:1px;
+  background:var(--accent);
+}
+.wcard b{color:var(--ink);font-weight:600;}
+.wtags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:auto;
+  padding-top:4px;
+}
+.wtag{
+  font-size:10.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:4px 9px;
+  border-radius:999px;
+  background:var(--accent-wash);
+  color:var(--accent-ink);
 }
 
 /* ============ recommendations ============ */
@@ -881,7 +849,7 @@ footer{
   <div class="wrap topbar-inner">
     <a class="brand" href="#top">Isita Ghosh</a>
     <nav class="navlinks">
-      <a href="#experience">Experience</a>
+      <a href="#experience">Work</a>
       <a href="#recommendations">Recommendations</a>
       <a href="#skills">Skills</a>
       <a href="#credentials">Credentials</a>
@@ -959,163 +927,126 @@ footer{
   </div>
 
 
-  <!-- ============ EXPERIENCE ============ -->
+  <!-- ============ WORK ============ -->
   <section class="section" id="experience">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="idx mono">01</span>
-        <h2>Experience</h2>
+        <h2>Selected Work</h2>
         <span class="line"></span>
       </div>
 
-      <div class="timeline" id="timeline">
-        <div class="spine"><div class="spine-fill" id="spineFill"></div></div>
+      <div class="rail reveal">
+        <div class="rail-item">
+          <span class="rail-when mono">Jul 2024 &mdash; Present</span>
+          <span class="rail-role">Senior Software Engineer</span>
+          <span class="rail-co">Prowess Software Services &middot; Remote</span>
+          <span class="rail-note mono">Promoted from Software Engineer, Apr 2026</span>
+        </div>
+        <div class="rail-item">
+          <span class="rail-when mono">Sep 2022 &mdash; Jul 2024</span>
+          <span class="rail-role">MuleSoft Developer</span>
+          <span class="rail-co">Exavalu Solutions &middot; Kolkata</span>
+          <span class="rail-note mono">Promoted from Developer Trainee, May 2023</span>
+        </div>
+        <div class="rail-item">
+          <span class="rail-when mono">Dec 2021 &mdash; Aug 2022</span>
+          <span class="rail-role">Internship Trainee</span>
+          <span class="rail-co">Exavalu Solutions &middot; Kolkata</span>
+          <span class="rail-note mono">Converted to full time</span>
+        </div>
+      </div>
 
-        <!-- Prowess -->
-        <article class="entry reveal">
-          <span class="node"></span>
-          <p class="entry-date mono">Jul 2024 &mdash; Present</p>
-          <h3>Senior Software Engineer</h3>
-          <p class="org">Prowess Software Services Pvt. Ltd. &middot; Remote</p>
-          <p class="roles mono">Promoted from Software Engineer, Apr 2026</p>
-          <div class="projects">
-
-            <details class="proj" open>
-              <summary>
-                <span class="proj-title">General Beverages — Enterprise Application Integration</span>
-                <span class="proj-tag">API-led</span>
-                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="proj-body">
-                <ul>
-                  <li>Architected an <b>API-led MuleSoft solution</b> across Experience, Process and System layers, with DataWeave 2.0 transformations, reusable error-handling frameworks and schema validations.</li>
-                  <li>Built <b>Snowflake-to-Dynamics 365</b> integrations with full loads and daily incremental batches processing <b>800+ records per day</b>, enabling real-time BI.</li>
-                  <li>Established <b>Azure DevOps CI/CD</b> pipelines for automated CloudHub deployments.</li>
-                  <li>Mentored junior developers on MuleSoft best practices, code reviews and API governance.</li>
-                </ul>
-              </div>
-            </details>
-
-            <details class="proj">
-              <summary>
-                <span class="proj-title">Ecolab — Partner Integration Migration (TIBCO BW → MuleSoft)</span>
-                <span class="proj-tag">B2B / EDI</span>
-                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="proj-body">
-                <ul>
-                  <li>Led the enterprise <b>B2B migration from TIBCO BusinessWorks</b> to the Anypoint Platform, including a Transportation Management System project onboarding partners such as Ortec, GTNexus and MercuryGate — sustaining <b>~1,000 messages/minute</b> at go-live.</li>
-                  <li>Authored <b>2,000+ lines of DataWeave 2.0</b> for partner-specific transformations; configured Anypoint Partner Manager for onboarding, intelligent routing, retry logic and 997 acknowledgements, improving partner SLA adherence.</li>
-                  <li>Integrated <b>Salesforce (Bulk API), SAP/ERP</b> and partner systems via FTP/SFTP, HTTP, Database, MQ and SAP connectors to process <b>X12 EDI (850, 810, 856)</b> transactions.</li>
-                  <li>Provided hypercare support after production go-live, ensuring stable operations and rapid issue resolution.</li>
-                </ul>
-              </div>
-            </details>
-
-            <details class="proj">
-              <summary>
-                <span class="proj-title">ZAGG — EDI File Conversion &amp; Data Integration</span>
-                <span class="proj-tag">X12 / EDIFACT</span>
-                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="proj-body">
-                <ul>
-                  <li>Built scalable EDI conversion flows with <b>X12 Read/Write connectors (850, 810, 852)</b>, converting X12/EDIFACT messages into CSV, JSON, XML and flat-file outputs with partner-specific validation rules.</li>
-                  <li>Created Anypoint Partner Manager flows and onboarded <b>20+ trading partners</b> for inbound and outbound EDI exchange.</li>
-                  <li>Implemented structured logging and monitoring to track processing volumes, failures and performance SLAs.</li>
-                </ul>
-              </div>
-            </details>
-
+      <div class="work">
+        <article class="wcard reveal">
+          <p class="wcard-meta mono">Prowess &middot; 2024 &ndash; present</p>
+          <h3 class="wcard-client">General Beverages</h3>
+          <p class="wcard-desc">Enterprise application integration across Experience, Process and System layers</p>
+          <div class="wm">
+            <span class="wm-num mono">800+<span class="wm-unit">/day</span></span>
+            <span class="wm-lbl">records in daily incremental batches</span>
           </div>
+          <ul>
+            <li>Architected an <b>API-led MuleSoft solution</b> with DataWeave 2.0 transformations, reusable error-handling frameworks and schema validation.</li>
+            <li>Built <b>Snowflake to Dynamics 365</b> integrations with full loads and daily incremental batches, enabling real-time BI.</li>
+            <li>Established <b>Azure DevOps CI/CD</b> for automated CloudHub deployments, and mentored juniors on governance and code review.</li>
+          </ul>
+          <div class="wtags"><span class="wtag">API-led</span><span class="wtag">Snowflake</span><span class="wtag">Dynamics 365</span><span class="wtag">Azure DevOps</span></div>
         </article>
 
-        <!-- Exavalu -->
-        <article class="entry reveal">
-          <span class="node"></span>
-          <p class="entry-date mono">Sep 2022 &mdash; Jul 2024</p>
-          <h3>MuleSoft Developer</h3>
-          <p class="org">Exavalu Solutions Pvt. Ltd. &middot; Kolkata</p>
-          <p class="roles mono">Promoted from MuleSoft Developer Trainee, May 2023</p>
-          <div class="projects">
-
-            <details class="proj">
-              <summary>
-                <span class="proj-title">Automobile Insurance — Mule API Development</span>
-                <span class="proj-tag">RAML / Security</span>
-                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="proj-body">
-                <ul>
-                  <li>Designed <b>RAML-based APIs</b> in Anypoint Design Center and published them to Anypoint Exchange, enforcing governance, standardisation and reuse across insurance integration services.</li>
-                  <li>Built integrations with Salesforce, SOAP, File, Email and SFTP connectors using <b>Scatter-Gather and Choice</b> routers.</li>
-                  <li>Enforced <b>OAuth 2.0 / JWT</b> policies and SLA tiers in API Manager.</li>
-                </ul>
-              </div>
-            </details>
-
-            <details class="proj">
-              <summary>
-                <span class="proj-title">US Insurance Company — IBM IIB to MuleSoft Migration</span>
-                <span class="proj-tag">Migration</span>
-                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="proj-body">
-                <ul>
-                  <li>Migrated complex IIB flows to MuleSoft, replicating the <b>IBM MQ</b> messaging layer via the JMS connector and validating functional parity through comprehensive unit and integration testing.</li>
-                  <li>Implemented <b>Batch Processing with checkpoint recovery</b> for high-volume data; applied Try-Catch, Until Successful and Cache scopes.</li>
-                  <li>Developed <b>MUnit regression suites achieving 80%+ coverage</b>; led production incident resolution and root-cause analysis.</li>
-                </ul>
-              </div>
-            </details>
-
+        <article class="wcard reveal">
+          <p class="wcard-meta mono">Prowess &middot; 2024 &ndash; present</p>
+          <h3 class="wcard-client">Ecolab</h3>
+          <p class="wcard-desc">Enterprise B2B migration from TIBCO BusinessWorks to the Anypoint Platform</p>
+          <div class="wm">
+            <span class="wm-num mono">1,000<span class="wm-unit">/min</span></span>
+            <span class="wm-lbl">messages sustained at go-live</span>
           </div>
+          <ul>
+            <li>Led the migration and onboarded partners including <b>Ortec, GTNexus and MercuryGate</b> for a Transportation Management System programme.</li>
+            <li>Authored <b>2,000+ lines of DataWeave 2.0</b>; configured Partner Manager for routing, retry logic and 997 acknowledgements.</li>
+            <li>Integrated <b>Salesforce Bulk API, SAP/ERP</b> and partner systems to process <b>X12 850, 810 and 856</b> transactions, then ran hypercare after go-live.</li>
+          </ul>
+          <div class="wtags"><span class="wtag">B2B / EDI</span><span class="wtag">X12</span><span class="wtag">Partner Manager</span><span class="wtag">SAP</span></div>
         </article>
 
-        <!-- Exavalu — internship -->
-        <article class="entry reveal">
-          <span class="node"></span>
-          <p class="entry-date mono">Dec 2021 &mdash; Aug 2022</p>
-          <h3>Internship Trainee</h3>
-          <p class="org">Exavalu Solutions Pvt. Ltd. &middot; Kolkata</p>
-          <div class="projects">
-
-            <details class="proj">
-              <summary>
-                <span class="proj-title">Customer Portal API</span>
-                <span class="proj-tag">First Mule build</span>
-                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="proj-body">
-                <ul>
-                  <li>Built a <b>customer portal API on MuleSoft</b> — the first Mule application I owned end to end — exposing customer records to the portal front end as a documented REST service.</li>
-                  <li>Learned the Anypoint toolchain hands on: <b>Anypoint Studio</b>, DataWeave transformations, connector configuration and deployment to a shared environment.</li>
-                  <li>Worked to the same review and delivery standards as the wider team, which is where the API-led habits behind everything since started.</li>
-                </ul>
-              </div>
-            </details>
-
-            <details class="proj">
-              <summary>
-                <span class="proj-title">Java Development &amp; Engineering Foundations</span>
-                <span class="proj-tag">Java</span>
-                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-              </summary>
-              <div class="proj-body">
-                <ul>
-                  <li>Contributed to an in-house <b>Java</b> project, writing service-layer code and picking up the team's build, version-control and code-review workflow.</li>
-                  <li>Completed the company's structured MuleSoft onboarding, then <b>converted to a full-time MuleSoft Developer</b> on the same team.</li>
-                </ul>
-              </div>
-            </details>
-
+        <article class="wcard reveal">
+          <p class="wcard-meta mono">Prowess &middot; 2024 &ndash; present</p>
+          <h3 class="wcard-client">ZAGG</h3>
+          <p class="wcard-desc">EDI file conversion and data integration for inbound and outbound partner exchange</p>
+          <div class="wm">
+            <span class="wm-num mono">20+</span>
+            <span class="wm-lbl">trading partners onboarded</span>
           </div>
+          <ul>
+            <li>Built scalable conversion flows with <b>X12 Read/Write connectors (850, 810, 852)</b>, emitting CSV, JSON, XML and flat files against partner-specific validation rules.</li>
+            <li>Created Partner Manager flows for onboarding, and added structured logging and monitoring for volumes, failures and SLA performance.</li>
+          </ul>
+          <div class="wtags"><span class="wtag">X12</span><span class="wtag">EDIFACT</span><span class="wtag">Partner Manager</span></div>
         </article>
 
+        <article class="wcard reveal">
+          <p class="wcard-meta mono">Exavalu &middot; 2022 &ndash; 2024</p>
+          <h3 class="wcard-client">US Insurance Company</h3>
+          <p class="wcard-desc">IBM Integration Bus estate migrated to MuleSoft with functional parity</p>
+          <div class="wm">
+            <span class="wm-num mono">80%+</span>
+            <span class="wm-lbl">MUnit regression coverage</span>
+          </div>
+          <ul>
+            <li>Replicated the <b>IBM MQ</b> messaging layer via the JMS connector and validated parity through unit and integration testing.</li>
+            <li>Implemented <b>batch processing with checkpoint recovery</b> for high-volume data, applying Try-Catch, Until Successful and Cache scopes.</li>
+            <li>Led production incident resolution and root-cause analysis.</li>
+          </ul>
+          <div class="wtags"><span class="wtag">Migration</span><span class="wtag">IBM MQ</span><span class="wtag">Batch</span><span class="wtag">MUnit</span></div>
+        </article>
+
+        <article class="wcard reveal">
+          <p class="wcard-meta mono">Exavalu &middot; 2022 &ndash; 2024</p>
+          <h3 class="wcard-client">Automobile Insurance</h3>
+          <p class="wcard-desc">Mule API development under a governed, reusable API programme</p>
+          <ul>
+            <li>Designed <b>RAML-based APIs</b> in Anypoint Design Center and published them to Exchange, enforcing standardisation and reuse.</li>
+            <li>Built integrations across Salesforce, SOAP, File, Email and SFTP using <b>Scatter-Gather and Choice</b> routers.</li>
+            <li>Enforced <b>OAuth 2.0 / JWT</b> policies and SLA tiers in API Manager.</li>
+          </ul>
+          <div class="wtags"><span class="wtag">RAML</span><span class="wtag">OAuth 2.0</span><span class="wtag">API Manager</span></div>
+        </article>
+
+        <article class="wcard reveal">
+          <p class="wcard-meta mono">Exavalu internship &middot; 2021 &ndash; 2022</p>
+          <h3 class="wcard-client">Customer Portal API</h3>
+          <p class="wcard-desc">First Mule application owned end to end</p>
+          <ul>
+            <li>Built a customer portal API exposing customer records to the portal front end as a documented REST service.</li>
+            <li>Learned the Anypoint toolchain hands on &mdash; <b>Studio, DataWeave</b>, connector configuration and deployment.</li>
+            <li>Alongside it, contributed <b>Java</b> service-layer code and picked up the team's build and code-review workflow, then converted to a full-time developer role.</li>
+          </ul>
+          <div class="wtags"><span class="wtag">First Mule build</span><span class="wtag">Java</span><span class="wtag">DataWeave</span></div>
+        </article>
       </div>
     </div>
   </section>
-
 
   <!-- ============ RECOMMENDATIONS ============ -->
   <section class="section" id="recommendations">
@@ -1356,9 +1287,6 @@ footer{
 
   /* ---- scroll progress + timeline spine ---- */
   var progress = document.getElementById("progress");
-  var spineFill = document.getElementById("spineFill");
-  var timeline = document.getElementById("timeline");
-  var entries = Array.prototype.slice.call(document.querySelectorAll(".entry"));
   var ticking = false;
 
   function onScroll(){
@@ -1366,19 +1294,6 @@ footer{
     var max = doc.scrollHeight - window.innerHeight;
     var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
     if(progress) progress.style.width = pct.toFixed(2) + "%";
-
-    if(timeline && spineFill){
-      var r = timeline.getBoundingClientRect();
-      var anchor = window.innerHeight * 0.55;
-      var filled = anchor - r.top;
-      var h = Math.max(0, Math.min(r.height, filled));
-      spineFill.style.height = h + "px";
-    }
-
-    entries.forEach(function(el){
-      var er = el.getBoundingClientRect();
-      if(er.top < window.innerHeight * 0.62){ el.classList.add("lit"); }
-    });
 
     ticking = false;
   }
