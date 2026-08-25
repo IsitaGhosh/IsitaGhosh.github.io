@@ -91,3 +91,48 @@ delete once you're happy with the site.
 ---
 
 Colours live at the very top of the `<style>` block as CSS variables (`--accent`, `--ground`, `--ink`), with the dark-mode values just below. Changing `--accent` in both places re-themes the whole site.
+
+---
+
+## Visitor analytics
+
+The site sends a page view to **GoatCounter**, a privacy-friendly analytics
+service. The snippet sits just before `</body>` in `index.html`.
+
+**Before it records anything you must claim the account:**
+
+1. Go to **https://www.goatcounter.com/signup**
+2. Set the site code to exactly **`isitaghosh`** — that is what the snippet
+   already points at. If you pick a different code, change both places in the
+   snippet to match.
+3. Free plan, personal use. No card needed.
+
+Your dashboard is then at **https://isitaghosh.goatcounter.com**, behind your
+login. Nobody else can see it.
+
+**What it shows you:** total views, views per day, which page, the referrer
+(so you can tell when someone arrived from LinkedIn or a job application),
+country, browser and screen size.
+
+**What no analytics tool can show you:** the names of individual visitors. See
+the note below.
+
+### Why there is no "who viewed my profile"
+
+LinkedIn can name your visitors because they are logged into LinkedIn and
+agreed to that in LinkedIn's terms. A public website has no such relationship
+with the people who open it — the only things a browser sends are an IP
+address, a user agent and a referrer. None of those is a person's name.
+
+So: use **LinkedIn's own "Who viewed your profile"** for identity, and
+GoatCounter for how many people reach the site and where they came from.
+Together they answer most of the question.
+
+Reverse-IP tools that claim to name the *company* a visitor came from do exist,
+but they are paid, they guess, and they are close to useless for anyone on home
+broadband or mobile data. Not worth it for a personal portfolio.
+
+### Turning it off
+
+Delete the `<script data-goatcounter=...>` tag at the bottom of `index.html`.
+Nothing else depends on it.
