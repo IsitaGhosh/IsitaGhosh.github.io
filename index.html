@@ -266,6 +266,33 @@ a{color:inherit;}
 .btn.primary:hover{color:var(--ground);opacity:.9;}
 .btn svg{width:15px;height:15px;}
 
+/* certification badges in the hero */
+.hero-certs{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:38px;
+}
+.hero-certs-label{
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  margin-right:2px;
+}
+.hero-badge{
+  display:block;
+  width:48px;
+  height:48px;
+  transition:transform .2s ease;
+}
+.hero-badge img{width:100%;height:100%;object-fit:contain;display:block;}
+.hero-badge:hover{transform:translateY(-3px);}
+@media (max-width:520px){
+  .hero-certs-label{width:100%;margin-bottom:-4px;}
+}
+
 /* ============ stat strip ============ */
 .stats{
   display:grid;
@@ -390,6 +417,12 @@ a{color:inherit;}
   font-weight:600;
   letter-spacing:-.015em;
   margin:0 0 4px;
+}
+.entry .roles{
+  font-size:11.5px;
+  letter-spacing:.04em;
+  color:var(--ink-3);
+  margin:-16px 0 22px;
 }
 .entry .org{
   font-family:"Source Serif 4", Georgia, serif;
@@ -830,6 +863,18 @@ footer{
           LinkedIn
         </a>
       </div>
+      <div class="hero-certs">
+        <span class="hero-certs-label mono">Salesforce Certified</span>
+        <a class="hero-badge" href="#credentials" title="Salesforce Certified MuleSoft Developer II">
+          <img src="badges/mulesoft-developer-2.png?v=2" width="160" height="160" alt="Salesforce Certified MuleSoft Developer II">
+        </a>
+        <a class="hero-badge" href="#credentials" title="Salesforce Certified AI Associate">
+          <img src="badges/salesforce-ai-associate.png?v=3" width="160" height="160" alt="Salesforce Certified AI Associate">
+        </a>
+        <a class="hero-badge" href="#credentials" title="Salesforce Certified MuleSoft Developer Level 1">
+          <img src="badges/mulesoft-developer-1.png?v=2" width="160" height="160" alt="Salesforce Certified MuleSoft Developer Level 1">
+        </a>
+      </div>
     </div>
   </section>
 
@@ -977,7 +1022,8 @@ footer{
           <span class="node"></span>
           <p class="entry-date mono">Jul 2024 &mdash; Present</p>
           <h3>Senior Software Engineer</h3>
-          <p class="org">Prowess Software Services Pvt. Ltd.</p>
+          <p class="org">Prowess Software Services Pvt. Ltd. &middot; Hyderabad</p>
+          <p class="roles mono">Promoted from Software Engineer, Apr 2026</p>
           <div class="projects">
 
             <details class="proj" open>
@@ -1035,7 +1081,8 @@ footer{
           <span class="node"></span>
           <p class="entry-date mono">Sep 2022 &mdash; Jul 2024</p>
           <h3>MuleSoft Developer</h3>
-          <p class="org">Exavalu Solutions Pvt. Ltd.</p>
+          <p class="org">Exavalu Solutions Pvt. Ltd. &middot; Kolkata</p>
+          <p class="roles mono">Promoted from MuleSoft Developer Trainee, May 2023</p>
           <div class="projects">
 
             <details class="proj">
@@ -1075,8 +1122,8 @@ footer{
         <article class="entry reveal">
           <span class="node"></span>
           <p class="entry-date mono">Dec 2021 &mdash; Aug 2022</p>
-          <h3>Intern</h3>
-          <p class="org">Exavalu Solutions Pvt. Ltd.</p>
+          <h3>Internship Trainee</h3>
+          <p class="org">Exavalu Solutions Pvt. Ltd. &middot; Kolkata</p>
           <div class="projects">
 
             <details class="proj">
@@ -1128,13 +1175,13 @@ footer{
         <div class="skillcard">
           <h3>Platform &amp; Languages</h3>
           <div class="chips">
-            <span class="chip key">Anypoint Platform</span><span class="chip">Anypoint Studio</span><span class="chip">Runtime Manager</span><span class="chip">API Manager</span><span class="chip">Exchange</span><span class="chip">Partner Manager</span><span class="chip key">Mule 4</span><span class="chip key">DataWeave 2.0</span><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">RAML / OAS</span><span class="chip">XML</span><span class="chip">JSON</span>
+            <span class="chip key">Anypoint Platform</span><span class="chip">Anypoint Studio</span><span class="chip">Runtime Manager</span><span class="chip">API Manager</span><span class="chip">Exchange</span><span class="chip">Partner Manager</span><span class="chip key">Mule 4</span><span class="chip key">DataWeave 2.0</span><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Agile / SDLC</span><span class="chip">RAML / OAS</span><span class="chip">XML</span><span class="chip">JSON</span>
           </div>
         </div>
         <div class="skillcard">
           <h3>Integration &amp; Web Services</h3>
           <div class="chips">
-            <span class="chip key">API-led connectivity</span><span class="chip">Event-driven</span><span class="chip">Batch</span><span class="chip">Streaming</span><span class="chip">REST</span><span class="chip">SOAP</span><span class="chip">HTTP</span><span class="chip">Salesforce</span><span class="chip">SAP</span><span class="chip">Database</span><span class="chip">FTP / SFTP</span><span class="chip">MQ</span><span class="chip">CTG</span><span class="chip">WSC</span><span class="chip">Snowflake</span><span class="chip">Dynamics 365</span>
+            <span class="chip key">API-led connectivity</span><span class="chip">Event-driven</span><span class="chip">Batch</span><span class="chip">Streaming</span><span class="chip">REST</span><span class="chip">SOAP</span><span class="chip">HTTP</span><span class="chip">Salesforce</span><span class="chip">SAP</span><span class="chip">Database</span><span class="chip">FTP / SFTP</span><span class="chip">MQ</span><span class="chip">CTG</span><span class="chip">WSC</span><span class="chip">Snowflake</span><span class="chip">Dynamics 365</span><span class="chip">Workday</span><span class="chip">SAP IDoc</span><span class="chip">SAP BW</span>
           </div>
         </div>
         <div class="skillcard">
@@ -1146,7 +1193,7 @@ footer{
         <div class="skillcard">
           <h3>Cloud, CI/CD &amp; Testing</h3>
           <div class="chips">
-            <span class="chip key">CloudHub</span><span class="chip">AWS</span><span class="chip key">Azure DevOps</span><span class="chip">Jenkins</span><span class="chip">Maven</span><span class="chip">Git</span><span class="chip">Azure TFS</span><span class="chip key">MUnit</span><span class="chip">Postman</span><span class="chip">Splunk</span><span class="chip">Structured logging</span><span class="chip">MySQL</span><span class="chip">MongoDB</span>
+            <span class="chip key">CloudHub</span><span class="chip">AWS</span><span class="chip key">Azure DevOps</span><span class="chip">Jenkins</span><span class="chip">Maven</span><span class="chip">Git</span><span class="chip">Azure TFS</span><span class="chip key">MUnit</span><span class="chip">Postman</span><span class="chip">Splunk</span><span class="chip">Structured logging</span><span class="chip">ELK / Elasticsearch</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">MS SQL Server</span>
           </div>
         </div>
       </div>
