@@ -201,6 +201,30 @@ a{color:inherit;}
   gap:10px;
   margin:0 0 22px;
 }
+/* availability indicator */
+.avail{
+  position:relative;
+  flex:none;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.avail::after{
+  content:"";
+  position:absolute;
+  inset:-4px;
+  border-radius:50%;
+  border:1px solid var(--accent);
+  opacity:.45;
+  animation:availpulse 2.4s ease-out infinite;
+}
+@keyframes availpulse{
+  0%   {transform:scale(.7); opacity:.5;}
+  70%  {transform:scale(1.25); opacity:0;}
+  100% {transform:scale(1.25); opacity:0;}
+}
+
 .eyebrow::after{
   content:"";
   flex:1;
@@ -879,7 +903,7 @@ footer{
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow mono">Kolkata, India &nbsp;/&nbsp; Available for senior integration roles</p>
+      <p class="eyebrow mono"><span class="avail" aria-hidden="true"></span>Kolkata, India &nbsp;/&nbsp; Available for senior integration roles &mdash; remote or contract</p>
       <h1 class="name">Isita<br><em>Ghosh</em></h1>
       <p class="role">Senior MuleSoft Integration Engineer<span class="sep">&middot;</span><span class="mono" style="font-size:.8em;letter-spacing:.04em;">MCD1 &nbsp;MCD2</span></p>
       <p class="lede">I build the connective tissue of enterprise systems — API-led architectures on the Anypoint Platform that move EDI, ERP and CRM data between companies without dropping a message. Nearly five years of it: migrating legacy TIBCO and IBM IIB estates to MuleSoft, onboarding trading partners, and keeping production quiet after go-live.</p>
