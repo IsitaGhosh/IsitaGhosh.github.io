@@ -60,38 +60,33 @@ Open `index.html` in any text editor. The content is plain HTML near the bottom 
 
 To add a new job, copy an entire `<article class="entry">…</article>` block and edit the text. To add a project inside a job, copy a `<details class="proj">…</details>` block.
 
-### Swapping in the official certification badges
+### Certification badges and certificates
 
-The credential cards currently use custom hexagon marks (`MCD 1`, `MCD 2`, `SF AI`)
-drawn in the site's own palette. If you'd rather show the real Salesforce-issued
-badge artwork:
+The credential cards use the **real Salesforce badge artwork**, cut straight out of
+your issued certificates and knocked out to transparent PNGs so they sit correctly
+on both the light and dark themes:
 
-1. Download the PNGs from your Trailhead profile → **Credentials**, or from Credly
-   if your certs are issued there. Save them at around 240×240.
-2. Make a `badges/` folder next to `index.html` and drop them in, e.g.
-   `badges/mcd1.png`.
-3. In the `CREDENTIALS` section, replace the badge block:
-
-```html
-<!-- from -->
-<span class="badgemark"><span class="face">…</span></span>
-<!-- to -->
-<span class="badgemark art"><img src="badges/mcd1.png" alt=""></span>
+```
+badges/         mulesoft-developer-1.png    (160×160, transparent)
+                mulesoft-developer-2.png
+                salesforce-ai-associate.png
+certificates/   mulesoft-developer-1.jpg    (full certificate, opened on click)
+                mulesoft-developer-2.jpg
+                mulesoft-developer-2.pdf    (the original download)
+                salesforce-ai-associate.jpg
 ```
 
-The `.art` variant drops the hexagon frame and just shows the image, so the
-official badge shape comes through unaltered. Leave `alt=""` — the credential
-name is already right beside it, so a screen reader would otherwise read it twice.
+Clicking a card opens the full certificate in a new tab. The "Emerging Award" keeps
+a drawn hexagon mark, since an employer award has no issued badge artwork.
 
-Use the official artwork only for certifications you actually hold; the badge is
-issued to you and its licence covers exactly that.
+**To add a new certification:** drop the badge PNG in `badges/` and the certificate
+image in `certificates/`, then copy an existing `<a class="cert">` block in the
+`CREDENTIALS` section and change the two paths, the name, and the sub-line. Keep
+`alt` describing the badge — the credential name sits right beside it.
 
-### Verify links
-
-Each certification card links to Salesforce's public credential-verification page.
-Replace those `href`s with your personal Trailhead profile URL once you have it —
-a recruiter clicking through to your name is far more convincing than a generic
-lookup form.
+Your original downloads (`1736414723486.jpeg` and friends) are listed in
+`.gitignore`, so they stay on your Mac and never reach the public repo. Safe to
+delete once you're happy with the site.
 
 ---
 

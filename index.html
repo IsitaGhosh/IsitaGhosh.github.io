@@ -605,14 +605,16 @@ a{color:inherit;}
 .badgemark.gold .face{color:var(--signal);}
 .cert:hover .badgemark{background:var(--accent-ink);}
 .cert.award:hover .badgemark{background:var(--signal);}
-/* swap in official badge artwork: <span class="badgemark art"><img src="badges/x.png" alt=""></span> */
+/* official Salesforce badge artwork, cut from the issued certificates */
 .badgemark.art{
   background:none;
   clip-path:none;
   width:56px;
   height:56px;
+  transition:transform .2s ease;
 }
 .badgemark.art img{width:100%;height:100%;object-fit:contain;display:block;}
+.cert:hover .badgemark.art{background:none;transform:scale(1.06);}
 
 .cert-text{display:block;flex:1;min-width:0;}
 .cert-name{display:block;font-size:.94rem;font-weight:600;line-height:1.35;}
@@ -630,6 +632,22 @@ a{color:inherit;}
 .cert-verify svg{width:11px;height:11px;transition:transform .2s ease;}
 .cert:hover .cert-verify{opacity:1;}
 .cert:hover .cert-verify svg{transform:translate(2px,-2px);}
+
+.cert-note{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:4px;
+  padding-left:2px;
+  font-size:11px;
+  letter-spacing:.06em;
+  color:var(--ink-3);
+  text-decoration:none;
+  transition:color .2s ease;
+}
+.cert-note svg{width:11px;height:11px;transition:transform .2s ease;}
+.cert-note:hover{color:var(--accent);}
+.cert-note:hover svg{transform:translate(2px,-2px);}
 
 .edu{
   padding:18px 0;
@@ -985,51 +1003,40 @@ footer{
         <div class="reveal">
           <h3 style="font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin:0 0 18px;">Certifications &amp; awards</h3>
           <div class="cert-list">
-            <!-- Verify links point at Salesforce's public credential-verification page.
-                 Swap each href for your personal Trailhead profile URL when you have it. -->
-            <a class="cert" href="https://trailhead.salesforce.com/credentials/verification" target="_blank" rel="noopener">
-              <span class="badgemark">
-                <span class="face">
-                  <span class="issuer mono">MCD</span>
-                  <span class="lvl mono">1</span>
-                </span>
+            <a class="cert" href="certificates/mulesoft-developer-1.jpg" target="_blank" rel="noopener">
+              <span class="badgemark art">
+                <img src="badges/mulesoft-developer-1.png" width="160" height="160" loading="lazy" alt="Salesforce Certified MuleSoft Developer Level 1 badge">
               </span>
               <span class="cert-text">
                 <span class="cert-name">MuleSoft Certified Developer — Level 1</span>
-                <span class="cert-sub mono">MuleSoft · Mule 4</span>
-                <span class="cert-verify mono">Verify
+                <span class="cert-sub mono">Salesforce · Issued Dec 2022</span>
+                <span class="cert-verify mono">View certificate
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
                 </span>
               </span>
             </a>
 
-            <a class="cert" href="https://trailhead.salesforce.com/credentials/verification" target="_blank" rel="noopener">
-              <span class="badgemark">
-                <span class="face">
-                  <span class="issuer mono">MCD</span>
-                  <span class="lvl mono">2</span>
-                </span>
+            <a class="cert" href="certificates/mulesoft-developer-2.jpg" target="_blank" rel="noopener">
+              <span class="badgemark art">
+                <img src="badges/mulesoft-developer-2.png" width="160" height="160" loading="lazy" alt="Salesforce Certified MuleSoft Developer II badge">
               </span>
               <span class="cert-text">
                 <span class="cert-name">MuleSoft Certified Developer — Level 2</span>
-                <span class="cert-sub mono">MuleSoft · Mule 4</span>
-                <span class="cert-verify mono">Verify
+                <span class="cert-sub mono">Salesforce · Issued Jul 2026 · ID 7910436</span>
+                <span class="cert-verify mono">View certificate
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
                 </span>
               </span>
             </a>
 
-            <a class="cert" href="https://trailhead.salesforce.com/credentials/verification" target="_blank" rel="noopener">
-              <span class="badgemark">
-                <span class="face">
-                  <span class="issuer mono">SF</span>
-                  <span class="lvl mono">AI</span>
-                </span>
+            <a class="cert" href="certificates/salesforce-ai-associate.jpg" target="_blank" rel="noopener">
+              <span class="badgemark art">
+                <img src="badges/salesforce-ai-associate.png" width="160" height="160" loading="lazy" alt="Salesforce Certified AI Associate badge">
               </span>
               <span class="cert-text">
                 <span class="cert-name">Salesforce AI Associate</span>
-                <span class="cert-sub mono">Salesforce</span>
-                <span class="cert-verify mono">Verify
+                <span class="cert-sub mono">Salesforce · Issued Dec 2024 · ID 5554355</span>
+                <span class="cert-verify mono">View certificate
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
                 </span>
               </span>
@@ -1046,6 +1053,10 @@ footer{
                 <span class="cert-sub mono">Employer recognition</span>
               </span>
             </div>
+
+            <a class="cert-note mono" href="https://trailhead.salesforce.com/credentials/verification" target="_blank" rel="noopener">Verify any credential with Salesforce
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
           </div>
         </div>
 

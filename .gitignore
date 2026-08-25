@@ -1,0 +1,7 @@
+.DS_Store
+
+# original certificate files as downloaded — the web-ready copies live in
+# certificates/ and badges/, so these stay local
+1736414723486.jpeg
+SalesForce AI Associate.jpeg
+Cert7910436_MuleSoftDeveloperII_20260704.pdf
