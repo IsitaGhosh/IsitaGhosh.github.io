@@ -132,6 +132,18 @@ Reverse-IP tools that claim to name the *company* a visitor came from do exist,
 but they are paid, they guess, and they are close to useless for anyone on home
 broadband or mobile data. Not worth it for a personal portfolio.
 
+### Reaching your dashboard from the site
+
+Open **https://isitaghosh.github.io/#admin** and an *Analytics* button appears in
+the bottom-right corner, linking to your GoatCounter dashboard. Without the
+`#admin` on the end, the button does not render at all.
+
+To be clear about what this is and is not: the link is in the page source, so it
+is not a secret. It does not need to be. What keeps your numbers private is that
+**the dashboard requires your GoatCounter login** — a stranger who found the
+button would land on a login screen. The `#admin` fragment is a convenience so
+the button stays out of the way of visitors, not a security control.
+
 ### Knowing who looked: tagged links
 
 You cannot learn a stranger's name from a website visit — see the note above.
