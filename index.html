@@ -346,11 +346,11 @@ body.nav-open{overflow:hidden;}
 .name{
   font-family:"Source Serif 4", Georgia, serif;
   font-weight:400;
-  font-size:clamp(3.2rem, 11vw, 6.6rem);
-  line-height:.94;
+  font-size:clamp(2.6rem, 8.4vw, 5.6rem);
+  line-height:1.02;
   letter-spacing:-.03em;
-  margin:0 0 22px;
-  text-wrap:balance;
+  margin:0 0 18px;
+  white-space:nowrap;
 }
 .name em{
   font-style:italic;
@@ -440,7 +440,8 @@ body.nav-open{overflow:hidden;}
   display:inline-flex;
   align-items:center;
   gap:9px;
-  padding:8px 15px 8px 12px;
+  margin-bottom:22px;
+  padding:8px 16px 8px 12px;
   border:1px solid var(--rule);
   border-radius:999px;
   background:var(--surface);
@@ -449,6 +450,19 @@ body.nav-open{overflow:hidden;}
   color:var(--ink);
 }
 .award-chip svg{width:16px;height:16px;flex:none;color:var(--signal);}
+.award-chip-sub{
+  padding-left:10px;
+  margin-left:2px;
+  border-left:1px solid var(--rule);
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:400;
+  color:var(--ink-3);
+}
+@media (max-width:480px){
+  .award-chip-sub{display:none;}
+}
 @media (max-width:560px){
   .hcrow{flex-wrap:wrap;gap:8px;}
   .hcrow-label{width:100%;}
@@ -1109,7 +1123,12 @@ footer{
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow mono"><span class="avail" aria-hidden="true"></span>Kolkata, India &nbsp;/&nbsp; Available for senior integration roles &mdash; full-time, contract or remote</p>
-      <h1 class="name">Isita<br><em>Ghosh</em></h1>
+      <h1 class="name">Isita <em>Ghosh</em></h1>
+      <span class="award-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v5a6 6 0 0 1-12 0z"/><path d="M6 5H4a2 2 0 0 0 2 3M18 5h2a2 2 0 0 1-2 3"/><path d="M12 14v3M9 21h6M10 17h4l1 4H9z"/></svg>
+        Emerging Award
+        <span class="award-chip-sub mono">Employer recognition</span>
+      </span>
       <p class="role">Senior MuleSoft Integration Engineer<span class="sep">&middot;</span><span class="mono" style="font-size:.8em;letter-spacing:.04em;">MCD1 &nbsp;MCD2</span></p>
       <p class="lede">I build the connective tissue of enterprise systems — API-led architectures on the Anypoint Platform that move EDI, ERP and CRM data between companies without dropping a message. Nearly five years of it: migrating legacy TIBCO and IBM IIB estates to MuleSoft, onboarding trading partners, and keeping production quiet after go-live.</p>
       <div class="actions">
@@ -1139,15 +1158,6 @@ footer{
             <a class="hero-badge" href="#certificates" title="Salesforce Certified MuleSoft Developer Level 1">
             <img src="badges/mulesoft-developer-1.png?v=2" width="160" height="160" alt="Salesforce Certified MuleSoft Developer Level 1">
         </a>
-          </div>
-        </div>
-        <div class="hcrow">
-          <span class="hcrow-label mono">Employer Award</span>
-          <div class="hcrow-items">
-            <span class="award-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v5a6 6 0 0 1-12 0z"/><path d="M6 5H4a2 2 0 0 0 2 3M18 5h2a2 2 0 0 1-2 3"/><path d="M12 14v3M9 21h6M10 17h4l1 4H9z"/></svg>
-              Emerging Award
-            </span>
           </div>
         </div>
       </div>
