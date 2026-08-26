@@ -1,14 +1,11 @@
 .DS_Store
 
-# original certificate files as downloaded — the web-ready copies live in
-# certificates/ and badges/, so these stay local
+# source files kept on this machine only - the web-ready copies are in
+# badges/ and certificates/
+*.local.md
+*.local.pdf
+Profile.pdf
+images.png
 1736414723486.jpeg
 SalesForce AI Associate.jpeg
-Cert7910436_MuleSoftDeveloperII_20260704.pdf
-1_dwBGnAcuernRjpqdpbmxMg.png
-images.png
-Profile.pdf
-Screenshot*.png
-
-# private copy of the old DEPLOY notes, kept off the public repo
-DEPLOY.local.md
+Cert*.pdf
