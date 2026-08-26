@@ -851,7 +851,7 @@ body.nav-open{overflow:hidden;}
   text-decoration:none;
   transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
-.cert:hover{border-color:var(--accent);transform:translateX(3px);box-shadow:var(--shadow);}
+.cert:hover{border-color:var(--accent);box-shadow:var(--shadow);}
 .cert.award:hover{border-color:var(--signal);}
 
 /* hexagonal badge mark: outer hexagon is the ring, inner is the face */
@@ -907,20 +907,7 @@ body.nav-open{overflow:hidden;}
 .cert-text{display:block;flex:1;min-width:0;}
 .cert-name{display:block;font-size:.94rem;font-weight:600;line-height:1.35;}
 .cert-sub{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-top:4px;}
-.cert-verify{
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
-  margin-top:7px;
-  font-size:11px;
-  letter-spacing:.05em;
-  color:var(--accent-ink);
-  opacity:.85;
-}
-.cert-verify svg{width:11px;height:11px;transition:transform .2s ease;}
-.cert:hover .cert-verify{opacity:1;}
-.cert:hover .cert-verify svg{transform:translate(2px,-2px);}
-
+.cert:hover 
 .cert-note{
   display:inline-flex;
   align-items:center;
@@ -1496,44 +1483,35 @@ footer{
         <div class="reveal">
           <h3 style="font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin:0 0 18px;">Certifications</h3>
           <div class="cert-list">
-            <a class="cert" href="certificates/mulesoft-developer-2.jpg" target="_blank" rel="noopener">
+            <div class="cert">
               <span class="badgemark art">
                 <img src="badges/mulesoft-developer-2.png?v=2" width="160" height="160" loading="lazy" alt="Salesforce Certified MuleSoft Developer II badge">
               </span>
               <span class="cert-text">
                 <span class="cert-name">MuleSoft Certified Developer — Level 2</span>
                 <span class="cert-sub mono">Salesforce · Issued Jul 2026 · ID 7910436</span>
-                <span class="cert-verify mono">View certificate
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-                </span>
               </span>
-            </a>
+            </div>
 
-            <a class="cert" href="certificates/salesforce-ai-associate.jpg" target="_blank" rel="noopener">
+            <div class="cert">
               <span class="badgemark art">
                 <img src="badges/salesforce-ai-associate.png?v=3" width="160" height="160" loading="lazy" alt="Salesforce Certified AI Associate badge">
               </span>
               <span class="cert-text">
                 <span class="cert-name">Salesforce AI Associate</span>
                 <span class="cert-sub mono">Salesforce · Issued Dec 2024 · ID 5554355</span>
-                <span class="cert-verify mono">View certificate
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-                </span>
               </span>
-            </a>
+            </div>
 
-            <a class="cert" href="certificates/mulesoft-developer-1.jpg" target="_blank" rel="noopener">
+            <div class="cert">
               <span class="badgemark art">
                 <img src="badges/mulesoft-developer-1.png?v=2" width="160" height="160" loading="lazy" alt="Salesforce Certified MuleSoft Developer Level 1 badge">
               </span>
               <span class="cert-text">
                 <span class="cert-name">MuleSoft Certified Developer — Level 1</span>
                 <span class="cert-sub mono">Salesforce · Issued Dec 2022</span>
-                <span class="cert-verify mono">View certificate
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-                </span>
               </span>
-            </a>
+            </div>
 
 
             <a class="cert-note mono" href="https://trailhead.salesforce.com/credentials/verification" target="_blank" rel="noopener">Verify any credential with Salesforce
