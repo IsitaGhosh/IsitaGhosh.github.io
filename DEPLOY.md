@@ -178,3 +178,30 @@ Recognised parameters: `ref`, `src`, `source`, `utm_source` for the source, and
 
 Delete the `<script data-goatcounter=...>` tag at the bottom of `index.html`.
 Nothing else depends on it.
+
+### The link preview image
+
+`og.png` (1200x630) is what LinkedIn, WhatsApp, Slack and email show when the
+site is shared. It is generated from the site's own design, so it stays on
+brand.
+
+To regenerate it after a change, recreate the small template and screenshot it
+at exactly 1200x630 with headless Chrome. The meta tags in `index.html` point at
+`https://isitaghosh.github.io/og.png?v=1` - **bump that `?v=` number whenever you
+replace the image**, or the networks will keep serving the cached old one.
+
+**LinkedIn caches previews hard.** After changing the image, paste the URL into
+**https://www.linkedin.com/post-inspector/** and hit inspect; that forces
+LinkedIn to re-fetch. Without it, an old or missing preview can persist for
+weeks.
+
+### Where to put the link on LinkedIn
+
+1. **Featured section** - Profile, Add profile section, Recommended, Add
+   featured, Add a link. Most visible: renders a large card using `og.png`.
+2. **Contact info** - the pencil icon under your headline, Add website, type
+   "Portfolio".
+3. **About** - paste the raw URL at the end. Not clickable, but read more often
+   than the contact panel.
+4. **Each Experience entry** - Add media, Link, so it shows against Prowess and
+   Exavalu too.
